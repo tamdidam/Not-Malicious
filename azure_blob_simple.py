@@ -9,13 +9,13 @@ try:
     response = requests.get(BLOB_URL)
     
     # Get current UTC time
-    utc_now = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC")
+    utc_now = datetime.now(datetime.UTC).strftime("%Y-%m-%d %H:%M:%S UTC")
     
     # Print HTTP return code and UTC time
     print(f"HTTP Return Code: {response.status_code}")
     print(f"Date and Time (UTC): {utc_now}")
     
 except Exception as e:
-    utc_now = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC")
+    utc_now = datetime.now(datetime.UTC).strftime("%Y-%m-%d %H:%M:%S UTC")
     print(f"Error: {str(e)}")
     print(f"Date and Time (UTC): {utc_now}")
